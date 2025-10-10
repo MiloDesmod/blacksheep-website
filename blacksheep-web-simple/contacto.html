@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Black Sheep</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Unificado y Corregido v1.2 */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display.swap');
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}html,body{height:100%}body{margin:0;font-family:'Poppins',sans-serif;background-color:#fff;color:#1a1a1a;position:relative;display:flex;flex-direction:column}main{flex-grow:1}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('oveja-fondo.png');background-repeat:no-repeat;background-position:center 1vh;animation:pulse 5s ease-in-out infinite;background-size:55%;z-index:-1;opacity:1}.container{max-width:1140px;margin:0 auto;padding:0 1.5rem}.navbar{background-color:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:60px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08)}.nav-logo img{height:35px}.nav-links{display:none}.nav-cta-button{display:none}.hero{text-align:center;padding:4rem 1.5rem;background-color:rgba(255,255,255,.25)}.hero h1{font-size:2.5rem;font-weight:900;color:#fff;text-shadow:2px 2px 10px rgba(0,0,0,.95)}.hero p{font-size:1rem;color:#fff;max-width:600px;margin:1rem auto 2rem auto;font-weight:500;text-shadow:1px 1px 8px rgba(0,0,0,.95)}.cta-button,.nav-cta-button,.mobile-menu .mobile-cta-button{background-image:linear-gradient(to right,#ffd700,#ffc107);color:#000;font-weight:700;text-decoration:none;border-radius:8px;transition:all .3s;box-shadow:0 4px 8px rgba(0,0,0,.2);display:inline-block}.cta-button:hover,.nav-cta-button:hover,.mobile-menu .mobile-cta-button:hover{box-shadow:0 8px 16px rgba(0,0,0,.3);transform:translateY(-3px)}.hero .cta-button{font-size:1rem;padding:.8rem 1.5rem}.nav-cta-button{padding:.4rem .9rem}.mobile-menu .mobile-cta-button{font-size:1.5rem;padding:.8rem 2rem;margin-top:1.5rem}.dropdown{position:relative;display:inline-block}.dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:.25rem;font-weight:500;color:#1a1a1a;text-decoration:none}.dropdown-toggle:hover{color:#000}.dropdown-content{display:none;position:absolute;background-color:#fff;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1;border-radius:8px;padding:1rem;margin-top:15px;width:max-content;left:50%;transform:translateX(-50%)}.dropdown-content.show{display:block}.dropdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.dropdown-card{padding:1rem;border:1px solid #e0e0e0;border-radius:8px;width:200px;transition:all .3s ease}.dropdown-card:hover{border-color:#ffc107;box-shadow:0 4px 12px rgba(0,0,0,.1);transform:translateY(-5px)}.dropdown-card h3{font-size:1rem;margin-top:0}.dropdown-card p{font-size:.8rem}.footer{text-align:center;padding:1.5rem 0;border-top:1px solid #e0e0e0;background-color:#f8f9fa;font-size:.9rem}.mobile-menu-button{display:flex;align-items:center;justify-content:center;background:0 0;border:none;cursor:pointer;padding:.5rem}.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.95);color:#fff;flex-direction:column;align-items:center;justify-content:center;z-index:20}.mobile-menu.open{display:flex}.mobile-menu a{color:#fff;text-decoration:none;font-size:2rem;margin:1.5rem 0}.close-button{position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#fff;background:0 0;border:none;cursor:pointer}
+        .page-header{text-align:center;padding:3rem 1.5rem;background-color:#f8f9fa}.page-header h1{font-size:2rem;font-weight:700;margin:0}.clients-section{background-color:#f8f9fa;padding:3rem 0;text-align:center}.clients-section h2{font-size:1.5rem;font-weight:500;color:#6c757d;margin-top:0;margin-bottom:2rem;text-transform:uppercase;letter-spacing:1px}.clients-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem}.clients-logos span{font-size:1.5rem;font-weight:700;color:#adb5bd;filter:grayscale(100%);opacity:.5;transition:all .3s}.clients-logos span:hover{filter:grayscale(0);opacity:1}.pricing-section,.contact-section{padding:3rem 0}.pricing-grid{display:grid;grid-template-columns:1fr;gap:2rem}.pricing-card{background-color:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.5rem;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:all .3s ease}.pricing-card.highlight{border-color:#ffc107;transform:scale(1.05)}.pricing-card:hover{transform:translateY(-10px);box-shadow:0 12px 24px rgba(0,0,0,.1)}.pricing-card h2{font-size:1.3rem;margin-top:0}.pricing-card .price{font-size:2.2rem;font-weight:700;margin:1rem 0}.pricing-card .price span{font-size:1rem;font-weight:400;color:#6c757d}.pricing-card ul{list-style:none;padding:0;margin:1.5rem 0}.pricing-card li{margin-bottom:1rem;font-size:.9rem}.pricing-card .cta-button{width:100%}.contact-wrapper{display:grid;grid-template-columns:1fr;gap:3rem;align-items:flex-start;background-color:rgba(255,255,255,0.9);padding:2rem;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1)}.contact-form{display:flex;flex-direction:column;gap:1.5rem}.contact-form input,.contact-form textarea{box-sizing:border-box;width:100%;padding:1rem;border:1px solid #ced4da;border-radius:8px;font-family:'Poppins',sans-serif;font-size:1rem}.contact-form button{width:auto;align-self:flex-start}.contact-info h2{font-size:1.5rem;margin-top:0}.contact-info p{line-height:1.8}
+        @media (min-width:768px){.container{padding:0 2rem}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links>a{text-decoration:none;color:#1a1a1a;font-weight:500}.nav-links>a:hover{color:#000}.nav-cta-button{display:inline-block}.mobile-menu-button{display:none}.hero h1{font-size:4.5rem}.hero p{font-size:1.25rem}.hero .cta-button{font-size:1.2rem;padding:1rem 2.5rem}.page-header h1{font-size:3rem}}@media (min-width:992px){.pricing-grid{grid-template-columns:repeat(3,1fr)}.contact-wrapper{grid-template-columns:2fr 1fr}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo Black Sheep"></a>
+        <div class="nav-links">
+            <div class="dropdown"><a class="dropdown-toggle" id="features-toggle">Características <span>&#9662;</span></a><div class="dropdown-content" id="features-menu"><div class="dropdown-grid"><div class="dropdown-card"><h3>Gestión de Flota</h3><p>Monitoree en tiempo real, administre mantenimientos y controle el estado de cada vehículo.</p></div><div class="dropdown-card"><h3>Optimización con IA "MIO"</h3><p>Nuestra IA analiza datos para predecir el estado de salud de sus vehículos y optimizar el rendimiento.</p></div><div class="dropdown-card"><h3>Roles y Permisos</h3><p>Sistema de seguridad robusto para asignar tareas y accesos específicos a cada miembro de su equipo.</p></div></div></div></div>
+            <a href="precios.html">Precios</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <a href="https://app.blacksheepplataform.com" target="_blank" class="nav-cta-button">Iniciar Sesión</a>
+        <button class="mobile-menu-button" id="hamburger-button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-button" id="close-button">&times;</button>
+        <a href="index.html">Inicio</a><a href="#">Características</a><a href="precios.html">Precios</a><a href="contacto.html">Contacto</a><a href="https://app.blacksheepplataform.com" class="mobile-cta-button">Iniciar Sesión</a>
+    </div>
+    <main>
+        <section class="page-header"><div class="container"><h1>Hablemos</h1><p>Estamos aquí para ayudarte. Envíanos tu consulta o solicitud de demo.</p></div></section>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <form class="contact-form" action="https://formspree.io/f/xjkaakng" method="POST">
+                        
+                        <input type="hidden" name="_next" value="gracias.html">
+
+                        <input type="text" name="name" placeholder="Tu Nombre" required>
+                        <input type="email" name="email" placeholder="Tu Email" required>
+                        <textarea name="message" rows="6" placeholder="Tu Mensaje" required></textarea>
+                        <button type="submit" class="cta-button">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info">
+                        <h2>Información</h2>
+                        <p><strong>Email:</strong><br>ventas@blacksheepplataform.com</p>
+                        <p><strong>Horario:</strong><br>Lunes a Viernes, 9am - 6pm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><p>&copy; 2025 Black Sheep. Todos los derechos reservados.</p></div></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){const e=document.getElementById("features-toggle"),t=document.getElementById("features-menu");e&&t&&(e.addEventListener("click",function(n){n.stopPropagation(),t.classList.toggle("show")}),window.addEventListener("click",function(n){t.contains(n.target)||e.contains(n.target)||t.classList.contains("show")&&t.classList.remove("show")}));const n=document.getElementById("hamburger-button"),o=document.getElementById("close-button"),d=document.getElementById("mobile-menu");n&&d&&o&&(n.addEventListener("click",function(){d.classList.add("open")}),o.addEventListener("click",function(){d.classList.remove("open")}))});
+    </script>
+</body>
+</html>

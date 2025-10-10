@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Black Sheep</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Unificado y Corregido v1.2 */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display.swap');
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}html,body{height:100%}body{margin:0;font-family:'Poppins',sans-serif;background-color:#fff;color:#1a1a1a;position:relative;display:flex;flex-direction:column}main{flex-grow:1}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('oveja-fondo.png');background-repeat:no-repeat;background-position:center 1vh;animation:pulse 5s ease-in-out infinite;background-size:55%;z-index:-1;opacity:1}.container{max-width:1140px;margin:0 auto;padding:0 1.5rem}.navbar{background-color:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:60px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08)}.nav-logo img{height:35px}.nav-links{display:none}.nav-cta-button{display:none}.cta-button,.nav-cta-button,.mobile-menu .mobile-cta-button{background-image:linear-gradient(to right,#ffd700,#ffc107);color:#000;font-weight:700;text-decoration:none;border-radius:8px;transition:all .3s;box-shadow:0 4px 8px rgba(0,0,0,.2);display:inline-block}.cta-button:hover,.nav-cta-button:hover,.mobile-menu .mobile-cta-button:hover{box-shadow:0 8px 16px rgba(0,0,0,.3);transform:translateY(-3px)}.nav-cta-button{padding:.4rem .9rem}.mobile-menu .mobile-cta-button{font-size:1.5rem;padding:.8rem 2rem;margin-top:1.5rem}.dropdown{position:relative;display:inline-block}.dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:.25rem;font-weight:500;color:#1a1a1a;text-decoration:none}.dropdown-toggle:hover{color:#000}.dropdown-content{display:none;position:absolute;background-color:#fff;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1;border-radius:8px;padding:1rem;margin-top:15px;width:max-content;left:50%;transform:translateX(-50%)}.dropdown-content.show{display:block}.dropdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.dropdown-card{padding:1rem;border:1px solid #e0e0e0;border-radius:8px;width:200px;transition:all .3s ease}.dropdown-card:hover{border-color:#ffc107;box-shadow:0 4px 12px rgba(0,0,0,.1);transform:translateY(-5px)}.dropdown-card h3{font-size:1rem;margin-top:0}.dropdown-card p{font-size:.8rem}.footer{text-align:center;padding:1.5rem 0;border-top:1px solid #e0e0e0;background-color:#f8f9fa;font-size:.9rem}.mobile-menu-button{display:flex;align-items:center;justify-content:center;background:0 0;border:none;cursor:pointer;padding:.5rem}.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.95);color:#fff;flex-direction:column;align-items:center;justify-content:center;z-index:20}.mobile-menu.open{display:flex}.mobile-menu a{color:#fff;text-decoration:none;font-size:2rem;margin:1.5rem 0}.close-button{position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#fff;background:0 0;border:none;cursor:pointer}
+        .thank-you-section { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-color: rgba(255,255,255,0.9); padding: 3rem; border-radius: 12px; margin: 2rem; }
+        .thank-you-section h1 { font-size: 2.5rem; font-weight: 700; margin: 0; }
+        .thank-you-section p { font-size: 1.1rem; color: #6c757d; max-width: 400px; }
+        .thank-you-section .cta-button { margin-top: 1.5rem; }
+        @media (min-width:768px){.container{padding:0 2rem}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links>a{text-decoration:none;color:#1a1a1a;font-weight:500}.nav-links>a:hover{color:#000}.nav-cta-button{display:inline-block}.mobile-menu-button{display:none}.thank-you-section h1{font-size:3.5rem}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo Black Sheep"></a>
+        <div class="nav-links">
+            <div class="dropdown"><a class="dropdown-toggle" id="features-toggle">Características <span>&#9662;</span></a><div class="dropdown-content" id="features-menu"></div></div>
+            <a href="precios.html">Precios</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <a href="https://app.blacksheepplataform.com" target="_blank" class="nav-cta-button">Iniciar Sesión</a>
+        <button class="mobile-menu-button" id="hamburger-button"></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu"></div>
+
+    <main>
+        <section class="thank-you-section">
+            <h1>¡Mensaje Enviado!</h1>
+            <p>Gracias por contactarnos. Nos pondremos en contacto con vos a la brevedad.</p>
+            <a href="index.html" class="cta-button">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; 2025 Black Sheep. Todos los derechos reservados.</p></div></footer>
+
+    <script>
+        // El script para los menús es necesario aquí también para consistencia
+        document.addEventListener('DOMContentLoaded',function(){const e=document.getElementById("features-toggle"),t=document.getElementById("features-menu");e&&t&&(e.addEventListener("click",function(n){n.stopPropagation(),t.classList.toggle("show")}),window.addEventListener("click",function(n){t.contains(n.target)||e.contains(n.target)||t.classList.contains("show")&&t.classList.remove("show")}));const n=document.getElementById("hamburger-button"),o=document.getElementById("close-button"),d=document.getElementById("mobile-menu");n&&d&&o&&(n.addEventListener("click",function(){d.classList.add("open")}),o.addEventListener("click",function(){d.classList.remove("open")}))});
+    </script>
+</body>
+</html>

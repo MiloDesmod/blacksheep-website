@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Sheep - Plataforma de Gestión</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display.swap');
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}html,body{height:100%}body{margin:0;font-family:'Poppins',sans-serif;background-color:#fff;color:#1a1a1a;position:relative;display:flex;flex-direction:column}main{flex-grow:1}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('oveja-fondo.png');background-repeat:no-repeat;background-position:center 1vh;animation:pulse 5s ease-in-out infinite;background-size:55%;z-index:-1;opacity:1}.container{max-width:1140px;margin:0 auto;padding:0 1.5rem}.navbar{background-color:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:60px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08)}.nav-logo img{height:35px}.nav-links{display:none}.nav-cta-button{display:none}.hero{text-align:center;padding:4rem 1.5rem;background-color:rgba(255,255,255,.25)}.hero h1{font-size:2.5rem;font-weight:900;color:#fff;text-shadow:2px 2px 10px rgba(0,0,0,.95)}.hero p{font-size:1rem;color:#fff;max-width:600px;margin:1rem auto 2rem auto;font-weight:500;text-shadow:1px 1px 8px rgba(0,0,0,.95)}.cta-button,.nav-cta-button,.mobile-menu .mobile-cta-button{background-image:linear-gradient(to right,#ffd700,#ffc107);color:#000;font-weight:700;text-decoration:none;border-radius:8px;transition:all .3s;box-shadow:0 4px 8px rgba(0,0,0,.2);display:inline-block}.cta-button:hover,.nav-cta-button:hover,.mobile-menu .mobile-cta-button:hover{box-shadow:0 8px 16px rgba(0,0,0,.3);transform:translateY(-3px)}.hero .cta-button{font-size:1rem;padding:.8rem 1.5rem}.nav-cta-button{padding:.4rem .9rem}.mobile-menu .mobile-cta-button{font-size:1.5rem;padding:.8rem 2rem;margin-top:1.5rem}.footer{text-align:center;padding:1.5rem 0;border-top:1px solid #e0e0e0;background-color:#f8f9fa;font-size:.9rem}.mobile-menu-button{display:flex;align-items:center;justify-content:center;background:0 0;border:none;cursor:pointer;padding:.5rem}.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.95);color:#fff;flex-direction:column;align-items:center;justify-content:center;z-index:20}.mobile-menu.open{display:flex}.mobile-menu a{color:#fff;text-decoration:none;font-size:2rem;margin:1.5rem 0}.close-button{position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#fff;background:0 0;border:none;cursor:pointer}
+        /* Estilos de páginas y secciones */
+        .page-header,.clients-section,.mobile-app-section{padding:3rem 1.5rem;text-align:center}.page-header h1{font-size:2rem;font-weight:700;margin:0}.clients-section{background-color:#f8f9fa}.clients-section h2{font-size:1.5rem;font-weight:500;color:#6c757d;margin-top:0;margin-bottom:2rem;text-transform:uppercase;letter-spacing:1px}.clients-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem}.clients-logos span{font-size:1.5rem;font-weight:700;color:#adb5bd;filter:grayscale(100%);opacity:.5;transition:all .3s}.clients-logos span:hover{filter:grayscale(0);opacity:1}
+        
+        /* === NUEVOS ESTILOS PARA SECCIÓN APP MÓVIL === */
+        .mobile-app-section { background-color: #fff; }
+        .mobile-app-wrapper { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; text-align: left; max-width: 900px; margin: 0 auto; }
+        .mobile-app-content h2 { font-size: 2rem; font-weight: 700; margin-top: 0; }
+        .mobile-app-content p { color: #6c757d; line-height: 1.8; }
+        .mobile-app-content ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .mobile-app-content li { padding-left: 1.5rem; position: relative; margin-bottom: 1rem; }
+        .mobile-app-content li::before { content: '✓'; color: #ffc107; position: absolute; left: 0; font-weight: 700; }
+        .app-badges { display: flex; gap: 1rem; margin-top: 2rem; }
+        .app-badges img { height: 40px; }
+        .mobile-app-image .placeholder { background-color: #e9ecef; border-radius: 20px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .mobile-app-image .placeholder img { max-width: 100%; border-radius: 12px; }
+
+
+        @media (min-width:768px){.container{padding:0 2rem}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links>a{text-decoration:none;color:#1a1a1a;font-weight:500}.nav-links>a:hover{color:#000}.nav-cta-button{display:inline-block}.mobile-menu-button{display:none}.hero h1{font-size:4.5rem}.hero p{font-size:1.25rem}.hero .cta-button{font-size:1.2rem;padding:1rem 2.5rem}.page-header h1{font-size:3rem}.mobile-app-wrapper{grid-template-columns:1fr 1fr;}.mobile-app-content h2{font-size:2.5rem;}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo Black Sheep"></a>
+        <div class="nav-links">
+            <a href="caracteristicas.html">Características</a>
+            <a href="precios.html">Precios</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <a href="https://app.blacksheepplataform.com" target="_blank" class="nav-cta-button">Iniciar Sesión</a>
+        <button class="mobile-menu-button" id="hamburger-button"><svg width="24" height="24" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-button" id="close-button">&times;</button>
+        <a href="index.html">Inicio</a><a href="caracteristicas.html">Características</a><a href="precios.html">Precios</a><a href="contacto.html">Contacto</a><a href="https://app.blacksheepplataform.com" class="mobile-cta-button">Iniciar Sesión</a>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Tome el Control Total de su Flota</h1>
+                <p>Black Sheep es la plataforma todo-en-uno que simplifica la gestión, optimiza rutas y reduce costos operativos.</p>
+                <a href="contacto.html" class="cta-button">Solicitar una Demo</a>
+            </div>
+        </section>
+
+        <section class="mobile-app-section">
+            <div class="container">
+                <div class="mobile-app-wrapper">
+                    <div class="mobile-app-content">
+                        <h2>La Ruta en la Palma de tu Mano</h2>
+                        <p>Nuestra aplicación móvil está diseñada para el operario en movimiento. Simplifica las tareas diarias y mantiene a todo el equipo sincronizado, desde la primera hasta la última entrega.</p>
+                        <ul>
+                            <li>**Navegación Optimizada:** Acceso a la hoja de ruta del día con destinos y prioridades claras.</li>
+                            <li>**Confirmación de Entregas:** Registrá visitas, tomá fotos y capturá firmas directamente desde el celular.</li>
+                            <li>**Comunicación Instantánea:** Recibí alertas y notificaciones importantes desde la central en tiempo real.</li>
+                        </ul>
+                        <div class="app-badges">
+                            <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/es-419_badge_web_generic.png" alt="Descargar en Google Play"></a>
+                            </div>
+                    </div>
+                    <div class="mobile-app-image">
+                        <div class="placeholder">
+                            <img src="https://via.placeholder.com/capturapantalla.png/343a40/FFFFFF?text=App+Screenshot" alt="Captura de pantalla de la app móvil">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clients-section">
+            <div class="container">
+                <h2>Confían en Nosotros</h2>
+                <div class="clients-logos">
+                    <span>CLIENTE 1</span><span>CLIENTE 2</span><span>CLIENTE 3</span><span>CLIENTE 4</span><span>CLIENTE 5</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2025 Black Sheep. Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const closeButton = document.getElementById('close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (hamburgerButton && mobileMenu && closeButton) {
+                hamburgerButton.addEventListener('click', function() { mobileMenu.classList.add('open'); });
+                closeButton.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+            }
+        });
+    </script>
+
+</body>
+</html>

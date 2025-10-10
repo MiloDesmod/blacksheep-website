@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características - Black Sheep</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Unificado v1.4 - Incluye MIO Showcase y Categorías de Módulos */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display.swap');
+        @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+        @keyframes voice-line { 0%, 100% { width: 0%; opacity: 0; } 50% { width: 100%; opacity: 1; } }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        html,body{height:100%}body{margin:0;font-family:'Poppins',sans-serif;background-color:#fff;color:#1a1a1a;position:relative;display:flex;flex-direction:column}main{flex-grow:1}
+        .container{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+        .navbar{background-color:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:60px;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(0,0,0,.08)}
+        .nav-logo img{height:35px}.nav-links{display:none}.nav-cta-button{display:none}
+        .cta-button,.nav-cta-button,.mobile-menu .mobile-cta-button{background-image:linear-gradient(to right,#ffd700,#ffc107);color:#000;font-weight:700;text-decoration:none;border-radius:8px;transition:all .3s;box-shadow:0 4px 8px rgba(0,0,0,.2);display:inline-block}
+        .cta-button:hover,.nav-cta-button:hover,.mobile-menu .mobile-cta-button:hover{box-shadow:0 8px 16px rgba(0,0,0,.3);transform:translateY(-3px)}
+        .nav-cta-button{padding:.4rem .9rem}.mobile-menu .mobile-cta-button{font-size:1.5rem;padding:.8rem 2rem;margin-top:1.5rem}
+        .dropdown{position:relative;display:inline-block}.dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:.25rem;font-weight:500;color:#1a1a1a;text-decoration:none}.dropdown-toggle:hover{color:#000}.dropdown-content{display:none;position:absolute;background-color:#fff;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1;border-radius:8px;padding:1rem;margin-top:15px;width:max-content;left:50%;transform:translateX(-50%)}.dropdown-content.show{display:block}.dropdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.dropdown-card{padding:1rem;border:1px solid #e0e0e0;border-radius:8px;width:200px;transition:all .3s ease}.dropdown-card:hover{border-color:#ffc107;box-shadow:0 4px 12px rgba(0,0,0,.1);transform:translateY(-5px)}.dropdown-card h3{font-size:1rem;margin-top:0}.dropdown-card p{font-size:.8rem}
+        .footer{text-align:center;padding:1.5rem 0;border-top:1px solid #e0e0e0;background-color:#f8f9fa;font-size:.9rem}
+        .mobile-menu-button{display:flex;align-items:center;justify-content:center;background:0 0;border:none;cursor:pointer;padding:.5rem}.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.95);color:#fff;flex-direction:column;align-items:center;justify-content:center;z-index:20}.mobile-menu.open{display:flex}.mobile-menu a{color:#fff;text-decoration:none;font-size:2rem;margin:1.5rem 0}.close-button{position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#fff;background:0 0;border:none;cursor:pointer}
+        .page-header{text-align:center;padding:3rem 1.5rem;background-color:#f8f9fa}.page-header h1{font-size:2rem;font-weight:700;margin:0}
+        
+        .mio-showcase { background-color: #222222; color: #fff; padding: 4rem 1.5rem; display: flex; justify-content: center; align-items: center; }
+        .mio-wrapper { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; max-width: 900px; }
+        .mio-logo-container { text-align: center; position: relative; }
+        .mio-logo { width: 150px; height: auto; animation: pulse 5s ease-in-out infinite; }
+        .mio-voice-line { height: 2px; background: linear-gradient(to right, transparent, #ffc107, transparent); margin: 1rem auto 0 auto; animation: voice-line 2s ease-in-out infinite; }
+        .mio-text h2 { font-size: 2rem; font-weight: 700; margin-top: 0; color: #ffc107; }
+        .mio-text p { font-family: 'Courier New', Courier, monospace; font-size: 1.1rem; color: #a0a0a0; min-height: 80px; }
+        .mio-text p::after { content: '_'; animation: blink 1s step-end infinite; }
+
+        .modules-section { padding: 4rem 1.5rem; text-align: center; background-color: #f8f9fa; }
+        .modules-section h2 { font-size: 2rem; font-weight: 700; margin-top: 0; margin-bottom: 3rem; }
+        .modules-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .module-category-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .module-category-card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: #ffc107; }
+        .module-category-card h3 { font-size: 1.5rem; margin-top: 0; }
+        .module-category-card ul { list-style: none; padding: 0; margin: 1.5rem 0 0 0; }
+        .module-category-card li { color: #6c757d; margin-bottom: 0.5rem; }
+
+        @media (min-width:768px){
+            .container{padding:0 2rem}
+            .nav-links{display:flex;gap:1.5rem;align-items:center}
+            .nav-links > a{text-decoration:none;color:#1a1a1a;font-weight:500}
+            .nav-links > a:hover{color:#000}
+            .nav-cta-button{display:inline-block}
+            .mobile-menu-button{display:none}
+            .page-header h1{font-size:3rem}
+            .mio-wrapper { grid-template-columns: 150px 1fr; gap: 3rem; }
+            .mio-text h2 { font-size: 2.5rem; }
+            .modules-section h2 { font-size: 2.5rem; }
+        }
+        @media (min-width:992px){
+            .modules-grid{grid-template-columns:repeat(3,1fr);}
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="Logo Black Sheep"></a>
+        <div class="nav-links">
+            <div class="dropdown"><a href="caracteristicas.html" class="dropdown-toggle" id="features-toggle">Características <span>&#9662;</span></a><div class="dropdown-content" id="features-menu"><div class="dropdown-grid"><div class="dropdown-card"><h3>Gestión de Flota</h3><p>Monitoree en tiempo real, administre mantenimientos y controle el estado de cada vehículo.</p></div><div class="dropdown-card"><h3>Optimización con IA "MIO"</h3><p>Nuestra IA analiza datos para predecir el estado de salud de sus vehículos y optimizar el rendimiento.</p></div><div class="dropdown-card"><h3>Roles y Permisos</h3><p>Sistema de seguridad robusto para asignar tareas y accesos específicos a cada miembro de su equipo.</p></div></div></div></div>
+            <a href="precios.html">Precios</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <a href="https://app.blacksheepplataform.com" target="_blank" class="nav-cta-button">Iniciar Sesión</a>
+        <button class="mobile-menu-button" id="hamburger-button"><svg width="24" height="24" viewBox="0 0 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round"/><path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-button" id="close-button">&times;</button>
+        <a href="index.html">Inicio</a><a href="caracteristicas.html">Características</a><a href="precios.html">Precios</a><a href="contacto.html">Contacto</a><a href="https://app.blacksheepplataform.com" class="mobile-cta-button">Iniciar Sesión</a>
+    </div>
+
+    <main>
+        <section class="page-header">
+            <div class="container"><h1>Características Principales</h1><p>Descubrí en detalle cómo Black Sheep potencia cada aspecto de tu operación.</p></div>
+        </section>
+
+        <section class="mio-showcase">
+            <div class="container">
+                <div class="mio-wrapper">
+                    <div class="mio-logo-container">
+                        <img src="oveja-fondo.png" alt="Logo MIO" class="mio-logo">
+                        <div class="mio-voice-line"></div>
+                    </div>
+                    <div class="mio-text">
+                        <h2>MIO, tu copiloto inteligente</h2>
+                        <p id="mio-speech"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modules-section">
+            <div class="container">
+                <h2>Una Plataforma Integral y Organizada</h2>
+                <div class="modules-grid">
+                    <div class="module-category-card">
+                        <h3>Administración y Finanzas</h3>
+                        <ul>
+                            <li>Perfil Empresa</li>
+                            <li>Proveedores</li>
+                            <li>Gastos y Pagos</li>
+                            <li>RRHH</li>
+                            <li>Cash Flow</li>
+                            <li>Liquidaciones</li>
+                        </ul>
+                    </div>
+                    <div class="module-category-card">
+                        <h3>Operaciones y Logística</h3>
+                        <ul>
+                            <li>Planificación de Rutas</li>
+                            <li>Clientes</li>
+                            <li>Zonas y Frecuencias</li>
+                            <li>Gestión de Stock</li>
+                        </ul>
+                    </div>
+                    <div class="module-category-card">
+                        <h3>Gestión de Roles y Perfiles</h3>
+                        <ul>
+                            <li>Gestión de Usuarios</li>
+                            <li>Gestión de Roles</li>
+                            <li>Papelera</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; 2025 Black Sheep. Todos los derechos reservados.</p></div></footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para el dropdown de escritorio
+            const featuresToggle = document.getElementById('features-toggle');
+            const featuresMenu = document.getElementById('features-menu');
+            if (featuresToggle && featuresMenu) {
+                featuresToggle.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    featuresMenu.classList.toggle('show');
+                });
+                window.addEventListener('click', function(event) {
+                    if (!featuresMenu.contains(event.target) && !featuresToggle.contains(event.target)) {
+                        if (featuresMenu.classList.contains('show')) {
+                            featuresMenu.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            // Lógica para el menú de hamburguesa móvil
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const closeButton = document.getElementById('close-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (hamburgerButton && mobileMenu && closeButton) {
+                hamburgerButton.addEventListener('click', function() {
+                    mobileMenu.classList.add('open');
+                });
+                closeButton.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                });
+            }
+
+            // Lógica para el efecto "máquina de escribir" de MIO
+            const mioSpeechElement = document.getElementById('mio-speech');
+            if (mioSpeechElement) {
+                const text = "Soy tu asistente IA integrado. Analizo datos en tiempo real para optimizar rutas, predecir fallas y potenciar la eficiencia de toda tu gestión.";
+                let i = 0;
+                function typeWriter() {
+                    if (i < text.length) {
+                        mioSpeechElement.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50); // Velocidad de escritura
+                    }
+                }
+                typeWriter();
+            }
+        });
+    </script>
+</body>
+</html>
